@@ -1,0 +1,14 @@
+C:\Nihilent\dotnetTraining\bin\Debug\net8.0\dotnetTraining.exe
+C:\Nihilent\dotnetTraining\bin\Debug\net8.0\dotnetTraining.deps.json
+C:\Nihilent\dotnetTraining\bin\Debug\net8.0\dotnetTraining.runtimeconfig.json
+C:\Nihilent\dotnetTraining\bin\Debug\net8.0\dotnetTraining.dll
+C:\Nihilent\dotnetTraining\bin\Debug\net8.0\dotnetTraining.pdb
+C:\Nihilent\dotnetTraining\obj\Debug\net8.0\dotnetTraining.GeneratedMSBuildEditorConfig.editorconfig
+C:\Nihilent\dotnetTraining\obj\Debug\net8.0\dotnetTraining.AssemblyInfoInputs.cache
+C:\Nihilent\dotnetTraining\obj\Debug\net8.0\dotnetTraining.AssemblyInfo.cs
+C:\Nihilent\dotnetTraining\obj\Debug\net8.0\dotnetTraining.csproj.CoreCompileInputs.cache
+C:\Nihilent\dotnetTraining\obj\Debug\net8.0\dotnetTraining.dll
+C:\Nihilent\dotnetTraining\obj\Debug\net8.0\refint\dotnetTraining.dll
+C:\Nihilent\dotnetTraining\obj\Debug\net8.0\dotnetTraining.pdb
+C:\Nihilent\dotnetTraining\obj\Debug\net8.0\dotnetTraining.genruntimeconfig.cache
+C:\Nihilent\dotnetTraining\obj\Debug\net8.0\ref\dotnetTraining.dll
