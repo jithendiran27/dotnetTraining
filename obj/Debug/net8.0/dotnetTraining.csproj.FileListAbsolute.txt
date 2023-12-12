@@ -12,3 +12,4 @@ C:\Nihilent\dotnetTraining\obj\Debug\net8.0\refint\dotnetTraining.dll
 C:\Nihilent\dotnetTraining\obj\Debug\net8.0\dotnetTraining.pdb
 C:\Nihilent\dotnetTraining\obj\Debug\net8.0\dotnetTraining.genruntimeconfig.cache
 C:\Nihilent\dotnetTraining\obj\Debug\net8.0\ref\dotnetTraining.dll
+C:\Nihilent\dotnetTraining\obj\Debug\net8.0\dotnetTraining.sourcelink.json
