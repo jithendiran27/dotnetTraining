@@ -148,34 +148,66 @@ using System.Diagnostics.Contracts;
 //     }
 // }
 
+// namespace DotnetTrngDay1
+// {
+//     public class Program
+//     {
+//         static void Main(string[] args)
+//         {
+//             Employee emp = new Employee();
+//             emp.EmployeeName = "Jithu";
+//             emp.EmployeeId = "1234";
+//             emp.DOB = Convert.ToDateTime("27-06-2002");
+//             emp.EmployeeSalary = 69;
+//             emp.PrintEmployeeDetails();
+//         }
+//     }
+//     public class Employee
+//     {
+//         public string EmployeeName { get; set; }
+//         public string EmployeeId { get; set; }
+//         public DateTime DOB { get; set; }
+//         public double EmployeeSalary { get; set; }
+
+//         public void PrintEmployeeDetails()
+//         {
+//             Console.WriteLine("Name is :" + EmployeeName);
+//             Console.WriteLine("Id is :" + EmployeeId);
+//             Console.WriteLine("DOB is :" + DOB);
+//             Console.WriteLine("Salary is :" + EmployeeSalary);
+//         }
+
+//     }
+// }
+
+// 
+
 namespace DotnetTrngDay1
 {
-    public class Program
+    class Program
     {
         static void Main(string[] args)
         {
-            Employee emp = new Employee();
-            emp.EmployeeName = "Jithu";
-            emp.EmployeeId = "1234";
-            emp.DOB = Convert.ToDateTime("27-06-2002");
-            emp.EmployeeSalary = 69;
-            emp.PrintEmployeeDetails();
-        }
-    }
-    public class Employee
-    {
-        public string EmployeeName { get; set; }
-        public string EmployeeId { get; set; }
-        public DateTime DOB { get; set; }
-        public double EmployeeSalary { get; set; }
+            int a = 200;
+            int b = 300;
 
-        public void PrintEmployeeDetails()
+            Console.WriteLine("Sum of a and b is: " + Sum(ref a, ref b));
+
+            Console.WriteLine("Difference between a and b is: " + a);
+
+            Console.WriteLine("Division of and b is: " + b);
+        }
+
+        static int Sum(ref int a, ref int b)
         {
-            Console.WriteLine("Name is :" + EmployeeName);
-            Console.WriteLine("Id is :" + EmployeeId);
-            Console.WriteLine("DOB is :" + DOB);
-            Console.WriteLine("Salary is :" + EmployeeSalary);
-        }
+            int temp = b;
+            int sum = a + b;
+            b = b / a;
+            a = temp - a;
 
+            return sum;
+        }
     }
+
+
 }
