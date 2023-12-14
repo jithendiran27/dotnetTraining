@@ -70,8 +70,6 @@
 //     }
 // }
 
-using System.Collections;
-using System.Diagnostics.Contracts;
 
 // namespace DotnetTrngDay2
 // {
@@ -182,32 +180,129 @@ using System.Diagnostics.Contracts;
 
 // 
 
+// 
+
+// namespace dotnetTraining
+// {
+//     class Program
+//     {
+//         static void Main(string[] args)
+//         {
+//             Console.WriteLine("Enter the number to convert from Kilometer to meter: ");
+//             int input = Convert.ToInt32(Console.ReadLine());
+//             int conversion = input * 1000;
+//             Console.WriteLine("{0}m", conversion);
+
+//             Console.WriteLine("Enter the String: ");
+//             string inputString = Console.ReadLine();
+//             string changedSring = inputString.Replace("$", "");
+//             Console.WriteLine("{0}", changedSring);
+
+//         }
+//     }
+// }
+
+using System.Security.Cryptography.X509Certificates;
+
+// namespace dotnotTrainingDay4
+// {
+//     class Program
+//     {
+//         static void Main(string[] args)
+//         {
+//             object[] daysOfWeeks = { "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" };
+//             PrintDays(daysOfWeeks);
+//         }
+//         static void PrintDays(object[] array)
+//         {
+
+//             for (int i = 0; i < array.Length; i++)
+//             {
+//                 if (i == 0 || i == 6)
+//                 {
+//                     Console.WriteLine("Happy Weekend");
+//                 }
+//                 else
+//                 {
+//                     Console.WriteLine("Happy Weekdays");
+//                 }
+//             }
+//         }
+//     }
+// }
+// class A
+// {
+//     public A()
+//     {
+//         Console.WriteLine("hi from a");
+//     }
+//     // public A(int a)
+//     // {
+//     //     Console.WriteLine("hello from a");
+//     // }
+// }
+
+// class B : A
+// {
+//     public B():base()
+//     {
+//         Console.WriteLine("hi from b");
+//     }
+//     public B(int a) 
+//     {
+//         Console.WriteLine("hello from b");
+//     }
+// }
+// }
+
 namespace DotnetTrngDay1
 {
     class Program
     {
         static void Main(string[] args)
         {
-            int a = 200;
-            int b = 300;
-
-            Console.WriteLine("Sum of a and b is: " + Sum(ref a, ref b));
-
-            Console.WriteLine("Difference between a and b is: " + a);
-
-            Console.WriteLine("Division of and b is: " + b);
+            string[] daysOfWeeks={"Wednesday","Sunday","Saturday","Tuesday"};
+            PrintMessage(daysOfWeeks);
+ 
+            TestStruct obj=new TestStruct();
+            obj.PrintA();
+ 
+            // Parent objParent=new Parent();
         }
-
-        static int Sum(ref int a, ref int b)
-        {
-            int temp = b;
-            int sum = a + b;
-            b = b / a;
-            a = temp - a;
-
-            return sum;
+        static void PrintMessage(string[] days){
+           
+            foreach (string item in days)
+            {
+                if(item==Convert.ToString(DaysOfWeeks.Sunday) ||
+                item==Convert.ToString(DaysOfWeeks.Saturday)){
+                    System.Console.WriteLine("Happy Weekend");
+                }
+                else{
+                    System.Console.WriteLine("Happy Weekday");
+                }
+            }
+           
+        }
+    }    
+    enum DaysOfWeeks{Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday}
+    class Parent{
+        Parent(){//Constructor is private
+            System.Console.WriteLine("Hello private const.");
+        }
+        public string MyName { get; set; }
+ 
+    }
+    struct TestStruct:ITest{
+        public int a;
+ 
+        public TestStruct(){
+            System.Console.WriteLine("Test struct");
+        }
+        public void PrintA(){
+ 
         }
     }
-
-
+   interface ITest{
+ 
+   }
 }
