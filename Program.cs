@@ -255,54 +255,223 @@ using System.Security.Cryptography.X509Certificates;
 // }
 // }
 
-namespace DotnetTrngDay1
+// 
+
+// using System.Collections;
+// using System.Diagnostics.Contracts;
+// using System.Formats.Asn1;
+// using DotnetTrngDay1;
+// using Microsoft.VisualBasic;
+
+// namespace DotnetTrngDay1
+// {
+//     class Program
+//     {
+//         static void Main(string[] args)
+//         {
+//             System.Console.WriteLine("Enter the detais of the Parent");
+
+//             System.Console.Write("Enter Name: ");
+//             string name= Console.ReadLine();
+//             System.Console.Write("Enter DOB: ");
+//             DateTime dob= Convert.ToDateTime(Console.ReadLine());
+//             System.Console.WriteLine("Enter Phone No: ");
+//             string phoneNo=Console.ReadLine();
+//             System.Console.WriteLine("**************************************");
+//             Child objParent=new Child(name,dob,phoneNo);
+//             objParent.PrintDetailsOfParent();
+//             System.Console.WriteLine("**************************************");
+
+//             System.Console.WriteLine("Enter the detais of the Child");
+
+//             System.Console.Write("Enter Name: ");
+//             name= Console.ReadLine();
+//             System.Console.Write("Enter DOB: ");
+//             dob= Convert.ToDateTime(Console.ReadLine());
+//             System.Console.WriteLine("Enter Phone No: ");
+//             phoneNo=Console.ReadLine();
+//             System.Console.WriteLine("**************************************");
+//             Child objChild=new Child(name,dob,phoneNo);
+//             objChild.PrintDetailsOfChild();
+//             System.Console.WriteLine("**************************************");
+
+
+
+
+//         }
+//     }    
+//     class Parent{
+//         protected string Name { get; set; }
+//         protected DateTime DOB { get; set; }
+//         protected string PhoneNo { get; set; }
+//         public Parent(string name,DateTime dob,string phoneNo)
+//         {
+//             Name=name;
+//             DOB=dob;
+//             PhoneNo=phoneNo;
+//         }
+//         public void PrintDetailsOfParent(){
+//             System.Console.WriteLine("Name of Parent: "+Name);
+//             System.Console.WriteLine("DOB of Parent: "+DOB);
+//             System.Console.WriteLine("Phone No. of Parent: "+PhoneNo);
+//         }
+//     }
+//     class  Child:Parent{
+
+//         public Child(string name,DateTime dob,string phoneNo):base(name,dob,phoneNo)
+//         {
+//             Name=name;
+//             DOB=dob;
+//             PhoneNo=phoneNo;
+//         }
+//         public void PrintDetailsOfChild(){
+//             System.Console.WriteLine("Name of Child: "+Name);
+//             System.Console.WriteLine("DOB of Child: "+DOB);
+//             System.Console.WriteLine("Phone No. of Child: "+PhoneNo);
+//         }
+//     }
+// }
+
+// 
+// namespace DotnetTrngDay5
+// {
+//     class Program
+//     {
+//         static void Main(string[] args)
+//         {
+//             Child obj=new Child("Shiekhar",Convert.ToDateTime("25/12/1995"));
+
+//             obj.CalculateAge();
+//         }
+//     }    
+//     abstract class Parent{
+
+//         protected string MyName { get; set; }
+//         protected DateTime DOB { get; set; }
+
+//         public Parent(string name,DateTime dob){//Parameterised constructor
+//             MyName=name;
+//             DOB=dob;
+//         }
+
+
+//         protected int CalculateAge(){
+//             System.Console.WriteLine("Parent method");
+//             return Convert.ToInt32(DateTime.Today.Subtract(DOB).Days/365);
+//         }
+
+//         public abstract void PrintDetails();
+//         public abstract void PrintDOB();
+//     }
+//     class Child:Parent{
+
+//         public int Age { get; set; }
+//         public Child(string name,DateTime dob):base(name,dob)
+//         {
+
+//         }
+//         public void PrintMyName(){
+//             System.Console.WriteLine("My Name is: "+MyName);
+//         }
+//         public int CalculateAge(){
+//             base.CalculateAge();
+//             System.Console.WriteLine("Child Method");
+//             return Age;
+//         }
+//         public override void PrintDetails(){
+
+//             System.Console.WriteLine("My name is {0} and my age is {1}",MyName,CalculateAge());
+//         }
+
+//         public override void PrintDOB()
+//         {
+//             System.Console.WriteLine("My DOB is: "+DOB);
+//         }
+//     }
+// }
+
+// namespace DotnetTrngDay5
+// {
+//     class Program
+//     {
+//         static void Main(string[] args)
+//         {
+//             /*            A objA=new A();//Reference of Parent and Object of Parent
+//                        objA.CalculateAge();
+
+//                        B objB=new B();//Reference of Child and Object of Child
+//                        objB.CalculateAge();
+
+//                        C objC=new C();//Reference of Child and Object of Child
+//                        objC.CalculateAge(); */
+
+//             A obj = new B();//Reference of Parent and Object of Child
+//             obj.CalculateAge();
+
+
+
+//             B obj1 = new C();
+//             obj1.CalculateAge();
+
+
+
+//         }
+//     }
+//     class A
+//     {
+
+//         public string MyName { get; set; }
+//         public DateTime DOB { get; set; }
+
+//         public virtual void CalculateAge()
+//         {
+//             System.Console.WriteLine("A Class");
+//         }
+//     }
+//     class B : A
+//     {
+//         public override void CalculateAge()
+//         {
+//             base.CalculateAge();
+//             System.Console.WriteLine("B Class");
+//         }
+//     }
+//     class C : B
+//     {
+//         public override void CalculateAge()
+//         {
+//             base.CalculateAge();
+//             System.Console.WriteLine("C Class");
+//         }
+//     }
+// }
+
+namespace DotnetTrngDay5
 {
     class Program
     {
         static void Main(string[] args)
-        {
-            string[] daysOfWeeks={"Wednesday","Sunday","Saturday","Tuesday"};
-            PrintMessage(daysOfWeeks);
- 
-            TestStruct obj=new TestStruct();
-            obj.PrintA();
- 
-            // Parent objParent=new Parent();
-        }
-        static void PrintMessage(string[] days){
-           
-            foreach (string item in days)
-            {
-                if(item==Convert.ToString(DaysOfWeeks.Sunday) ||
-                item==Convert.ToString(DaysOfWeeks.Saturday)){
-                    System.Console.WriteLine("Happy Weekend");
-                }
-                else{
-                    System.Console.WriteLine("Happy Weekday");
-                }
-            }
-           
+        {    
+            A obj=new B();//Abstracted than earlier
+            obj.MyName="Jithu";
+            obj.DisplayName();
+            obj.DisplayAge();
         }
     }    
-    enum DaysOfWeeks{Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday}
-    class Parent{
-        Parent(){//Constructor is private
-            System.Console.WriteLine("Hello private const.");
-        }
+    interface A{
         public string MyName { get; set; }
- 
+        public abstract void DisplayName();
+        public abstract void DisplayAge();
     }
-    struct TestStruct:ITest{
-        public int a;
- 
-        public TestStruct(){
-            System.Console.WriteLine("Test struct");
+    class B:A{
+        public string MyName { get; set; }
+        public void DisplayName(){
+            System.Console.WriteLine("Hello Jithu");
         }
-        public void PrintA(){
  
+        public void DisplayAge(){
+            System.Console.WriteLine("Age is :"+21);
         }
     }
-   interface ITest{
  
-   }
 }
