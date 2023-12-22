@@ -202,6 +202,7 @@
 //     }
 // }
 
+using System.Runtime.Intrinsics.Arm;
 using System.Security.Cryptography.X509Certificates;
 
 // namespace dotnotTrainingDay4
@@ -446,32 +447,82 @@ using System.Security.Cryptography.X509Certificates;
 //     }
 // }
 
-namespace DotnetTrngDay5
+// namespace DotnetTrngDay6
+// {
+//     class Program
+//     {
+//         static void main(string[] args)
+//         {
+// Predicate<Array> oddOrEven=(a)=>{
+//     foreach(int i in a){
+//         if(i%2==0){
+//             return true;
+//         }
+//         else
+//         return false;
+
+//     }
+
+
+// };
+
+//             Action<Array> OddOrEve=(b)=>{
+
+//                 for (int i = 0; i < b.Length; i++)
+//                 {
+//                     if(i%2==0){
+//                         Console.WriteLine("Even");
+//                     }
+//                     else{
+//                         Console.WriteLine("Odd");
+//                     }
+//                 }
+//             };
+
+
+//             Public Array a ={12,34,5};
+
+//             OddOrEve(a);
+//         }
+//     }
+// }
+
+// 
+
+// 
+
+namespace Inheritance
 {
-    class Program
+
+    class Program : ParentClass
     {
         static void Main(string[] args)
-        {    
-            A obj=new B();//Abstracted than earlier
-            obj.MyName="Jithu";
-            obj.DisplayName();
-            obj.DisplayAge();
+        {
+            Program p = new Program();
+
+            p.Method1();
+            p.Method2();
+            p.Method3();
         }
-    }    
-    interface A{
-        public string MyName { get; set; }
-        public abstract void DisplayName();
-        public abstract void DisplayAge();
-    }
-    class B:A{
-        public string MyName { get; set; }
-        public void DisplayName(){
-            System.Console.WriteLine("Hello Jithu");
-        }
- 
-        public void DisplayAge(){
-            System.Console.WriteLine("Age is :"+21);
+        public new void Method3()
+        {
+            Console.WriteLine("hi");
         }
     }
- 
+
+    public class ParentClass
+    {
+        public void Method1()
+        {
+            System.Console.WriteLine("Processing Method 1");
+        }
+        public void Method2()
+        {
+            System.Console.WriteLine("Processing Method 2");
+        }
+        public void Method3()
+        {
+            System.Console.WriteLine("Processing Method 3");
+        }
+    }
 }
