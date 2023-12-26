@@ -487,42 +487,63 @@ using System.Security.Cryptography.X509Certificates;
 //     }
 // }
 
-// 
-
-// 
-
-namespace Inheritance
+namespace DotnetTask
 {
-
-    class Program : ParentClass
+    class Program
     {
         static void Main(string[] args)
         {
-            Program p = new Program();
+            VotingSystem votingSystem = new VotingSystem();
 
-            p.Method1();
-            p.Method2();
-            p.Method3();
-        }
-        public new void Method3()
-        {
-            Console.WriteLine("hi");
+            votingSystem.AddNewVoter("Jithu", "ID_Document_Content");
+
+            votingSystem.SendUniqueLink(votingSystem.registeredVoters[0]);
         }
     }
-
-    public class ParentClass
+    class Voter
     {
-        public void Method1()
+        public string Name { get; set; }
+        public string IDDocument { get; set; }
+        public bool IsVerified { get; set; }
+        public string UniqueLink { get; set; }
+    }
+
+    class VotingSystem
+    {
+        public List<Voter> registeredVoters;
+
+        public VotingSystem()
         {
-            System.Console.WriteLine("Processing Method 1");
+            registeredVoters = new List<Voter>();
         }
-        public void Method2()
+
+        public void AddNewVoter(string name, string idDocument)
         {
-            System.Console.WriteLine("Processing Method 2");
+            Voter newVoter = new Voter { Name = name, IDDocument = idDocument, IsVerified = false, UniqueLink = GenerateUniqueLink() };
+            registeredVoters.Add(newVoter);
+            VerifyIDDocument(newVoter);
         }
-        public void Method3()
+
+        public void VerifyIDDocument(Voter voter)
         {
-            System.Console.WriteLine("Processing Method 3");
+            voter.IsVerified = true;
+        }
+
+        private string GenerateUniqueLink()
+        {
+            return ("This is your link");
+        }
+
+        public void SendUniqueLink(Voter voter)
+        {
+            if (voter.IsVerified)
+            {
+                Console.WriteLine("Hello {0}, here's your unique link to vote: {1}", voter.Name, voter.UniqueLink);
+            }
+            else
+            {
+                Console.WriteLine("Voter not verified.");
+            }
         }
     }
 }
