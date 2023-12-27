@@ -495,17 +495,17 @@ namespace DotnetTask
         {
             VotingSystem votingSystem = new VotingSystem();
 
-            votingSystem.AddNewVoter("Jithu", "ID_Document_Content");
+            votingSystem.AddNewVoter("Jithu", "Document");
 
-            votingSystem.SendUniqueLink(votingSystem.registeredVoters[0]);
+            votingSystem.SendLink(votingSystem.registeredVoters[0]);
         }
     }
     class Voter
     {
         public string Name { get; set; }
-        public string IDDocument { get; set; }
+        public string Document { get; set; }
         public bool IsVerified { get; set; }
-        public string UniqueLink { get; set; }
+        public string Link { get; set; }
     }
 
     class VotingSystem
@@ -517,28 +517,28 @@ namespace DotnetTask
             registeredVoters = new List<Voter>();
         }
 
-        public void AddNewVoter(string name, string idDocument)
+        public void AddNewVoter(string name, string Document)
         {
-            Voter newVoter = new Voter { Name = name, IDDocument = idDocument, IsVerified = false, UniqueLink = GenerateUniqueLink() };
+            Voter newVoter = new Voter { Name = name, Document = Document, IsVerified = false, Link = GenerateLink() };
             registeredVoters.Add(newVoter);
-            VerifyIDDocument(newVoter);
+            VerifyDocument(newVoter);
         }
 
-        public void VerifyIDDocument(Voter voter)
+        public void VerifyDocument(Voter voter)
         {
             voter.IsVerified = true;
         }
 
-        private string GenerateUniqueLink()
+        public string GenerateLink()
         {
             return ("This is your link");
         }
 
-        public void SendUniqueLink(Voter voter)
+        public void SendLink(Voter voter)
         {
             if (voter.IsVerified)
             {
-                Console.WriteLine("Hello {0}, here's your unique link to vote: {1}", voter.Name, voter.UniqueLink);
+                Console.WriteLine("Hello {0}, here's your link to vote: {1}", voter.Name, voter.Link);
             }
             else
             {
