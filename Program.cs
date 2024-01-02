@@ -487,63 +487,77 @@ using System.Security.Cryptography.X509Certificates;
 //     }
 // }
 
-namespace DotnetTask
+// namespace DotnetTask
+// {
+//     class Program
+//     {
+//         static void Main(string[] args)
+//         {
+//             VotingSystem votingSystem = new VotingSystem();
+
+//             votingSystem.AddNewVoter("Jithu", "Document");
+
+//             votingSystem.SendLink(votingSystem.registeredVoters[0]);
+//         }
+//     }
+//     class Voter
+//     {
+//         public string Name { get; set; }
+//         public string Document { get; set; }
+//         public bool IsVerified { get; set; }
+//         public string Link { get; set; }
+//     }
+
+//     class VotingSystem
+//     {
+//         public List<Voter> registeredVoters;
+
+//         public VotingSystem()
+//         {
+//             registeredVoters = new List<Voter>();
+//         }
+
+//         public void AddNewVoter(string name, string Document)
+//         {
+//             Voter newVoter = new Voter { Name = name, Document = Document, IsVerified = false, Link = GenerateLink() };
+//             registeredVoters.Add(newVoter);
+//             VerifyDocument(newVoter);
+//         }
+
+//         public void VerifyDocument(Voter voter)
+//         {
+//             voter.IsVerified = true;
+//         }
+
+//         public string GenerateLink()
+//         {
+//             return ("This is your link");
+//         }
+
+//         public void SendLink(Voter voter)
+//         {
+//             if (voter.IsVerified)
+//             {
+//                 Console.WriteLine("Hello {0}, here's your link to vote: {1}", voter.Name, voter.Link);
+//             }
+//             else
+//             {
+//                 Console.WriteLine("Voter not verified.");
+//             }
+//         }
+//     }
+// }
+
+namespace DotnetTraing
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
-            VotingSystem votingSystem = new VotingSystem();
-
-            votingSystem.AddNewVoter("Jithu", "Document");
-
-            votingSystem.SendLink(votingSystem.registeredVoters[0]);
-        }
-    }
-    class Voter
-    {
-        public string Name { get; set; }
-        public string Document { get; set; }
-        public bool IsVerified { get; set; }
-        public string Link { get; set; }
-    }
-
-    class VotingSystem
-    {
-        public List<Voter> registeredVoters;
-
-        public VotingSystem()
-        {
-            registeredVoters = new List<Voter>();
-        }
-
-        public void AddNewVoter(string name, string Document)
-        {
-            Voter newVoter = new Voter { Name = name, Document = Document, IsVerified = false, Link = GenerateLink() };
-            registeredVoters.Add(newVoter);
-            VerifyDocument(newVoter);
-        }
-
-        public void VerifyDocument(Voter voter)
-        {
-            voter.IsVerified = true;
-        }
-
-        public string GenerateLink()
-        {
-            return ("This is your link");
-        }
-
-        public void SendLink(Voter voter)
-        {
-            if (voter.IsVerified)
-            {
-                Console.WriteLine("Hello {0}, here's your link to vote: {1}", voter.Name, voter.Link);
-            }
-            else
-            {
-                Console.WriteLine("Voter not verified.");
-            }
+            Console.BackgroundColor = ConsoleColor.Blue;
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.Clear();
+            Console.WriteLine("hi how are you?");
         }
     }
 }
